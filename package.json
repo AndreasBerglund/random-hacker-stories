@@ -1,0 +1,35 @@
+{
+  "name": "random hacker stories",
+  "version": "1.0.0",
+  "description": "web page to show 10 random hacker stories, fetched from hacker news api",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "develop": "parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "andreas berglund",
+  "license": "mit",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.7",
+    "parcel": "^2.7.0",
+    "prettier": "^2.7.1",
+    "process": "^0.11.10",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}

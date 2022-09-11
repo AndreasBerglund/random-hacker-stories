@@ -1,0 +1,47 @@
+body {
+  font-family: "Roboto Mono";
+  font-size: 16px;
+  background-color: $grey;
+  overflow-x: hidden;
+}
+
+header {
+  margin: 50px $horizontal-padding-mobile 20px $horizontal-padding-mobile;
+}
+main {
+  position: relative;
+  padding: 30px $horizontal-padding-mobile;
+  min-height: 40vh;
+}
+footer {
+  margin: 20px $horizontal-padding-mobile;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  header {
+    margin: 100px $horizontal-padding-desktop 70px $horizontal-padding-desktop;
+  }
+  main {
+    overflow-x: scroll;
+    padding: 30px $horizontal-padding-desktop;
+  }
+  footer {
+    margin: 20px $horizontal-padding-desktop;
+  }
+}
+
+/*this is to disable overscroll behaviour because we have a horizontal scroll box
+if not the user would navigate back and forth (go to prev page)
+*/
+html,
+body {
+  overscroll-behavior-x: none;
+}
+@media screen and (min-width: $breakpoint-md) {
+  ul.cards {
+    display: grid;
+    grid-template-columns: repeat(10, $card-max-width);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+  }
+}

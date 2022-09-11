@@ -1,0 +1,27 @@
+.loading-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 60px;
+    height: auto;
+    animation: pulse 1.2s ease-in-out 0ms infinite alternate;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
