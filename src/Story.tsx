@@ -29,9 +29,7 @@ const Story: FunctionComponent<IStory> = ({
           </span>
           <span>{moment.unix(time).format("DD.MM.YYYY")}</span>
         </div>
-        <div className="cta">
-          <img src={RabbitImage} />
-        </div>
+        <div className="cta">{url && <img src={RabbitImage} />}</div>
       </div>
     </li>
   );
