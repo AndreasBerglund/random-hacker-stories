@@ -1,7 +1,7 @@
 {
   "name": "random hacker stories",
   "version": "1.0.0",
-  "description": "web page to show 10 random hacker stories, fetched from hacker news api",
+  "description": "web application to show 10 random hacker stories, fetched from hacker news api",
   "scripts": {
     "build": "parcel build src/index.html",
     "develop": "parcel src/index.html",
@@ -28,6 +28,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

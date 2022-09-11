@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { IStory } from "./Types";
-import StaticImage from "./thumbnail.jpg";
 import RabbitImage from "./rabbit.png";
+import moment from "moment";
 
 const Story: FunctionComponent<IStory> = ({
   id,
@@ -16,7 +16,7 @@ const Story: FunctionComponent<IStory> = ({
       {url && <a href={url} target="_blank"></a>}
       <div className="score">{score}</div>
       <div className="image-container">
-        <img src={StaticImage} alt="card image" />
+        <img src={"https://picsum.photos/400/240?p=" + id} alt="card image" />
       </div>
       <div className="title-container">
         <h3>{title}</h3>
@@ -27,7 +27,7 @@ const Story: FunctionComponent<IStory> = ({
           <span>
             By <strong>{author.id}</strong>
           </span>
-          <span>{time}</span>
+          <span>{moment.unix(time).format("DD.MM.YYYY")}</span>
         </div>
         <div className="cta">
           <img src={RabbitImage} />
