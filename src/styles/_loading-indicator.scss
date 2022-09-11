@@ -6,9 +6,9 @@
   width: 100%;
   padding: 50px;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   gap: 1em;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   img {
     width: 60px;
