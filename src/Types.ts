@@ -1,3 +1,5 @@
+export type Status = "unloaded" | "loading" | "loaded";
+
 export interface IStory {
   id: number;
   title: string;
@@ -5,6 +7,7 @@ export interface IStory {
   score: number;
   time: number;
   author: IAuthor;
+  status: Status;
 }
 
 export interface IAuthor {

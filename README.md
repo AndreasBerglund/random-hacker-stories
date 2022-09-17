@@ -1,11 +1,5 @@
-UI must be responsive\
-CSS must be compiled with a preprocessor\
-Do not use a UI library or CSS framework
-
-[Link](https://stellular-custard-076e99.netlify.app/)
+[Demo](https://stellular-custard-076e99.netlify.app/)
 
 ## potential improvements
 
-loading indication : placeholder cards or rabbit running animation\
-optimize loading stories: No splice operation.\
-Load individual stories and set in state ( problem with sorting ? )
+v2 with no blocking individual loading of stories

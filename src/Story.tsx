@@ -1,18 +1,58 @@
-import React, { FunctionComponent } from "react";
-import { IStory } from "./Types";
+import React, { FunctionComponent, useEffect } from "react";
+import { IItem, IStory, IUser } from "./Types";
 import RabbitImage from "./rabbit.png";
 import moment from "moment";
 
-const Story: FunctionComponent<IStory> = ({
+type StoryProps = IStory & {
+  setStories: React.Dispatch<
+    React.SetStateAction<{
+      [key: string]: IStory;
+    }>
+  >;
+};
+
+const Story: FunctionComponent<StoryProps> = ({
   id,
   title,
   url,
   score,
   time,
   author,
+  status,
+  setStories,
 }) => {
+  useEffect(() => {
+    (async () => {
+      //Fetch item
+      const res = await fetch(
+        `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+      );
+      const item: IItem = await res.json();
+
+      //Fetch author
+      const res_author = await fetch(
+        `https://hacker-news.firebaseio.com/v0/user/${item.by}.json`
+      );
+      const author: IUser = await res_author.json();
+
+      setStories((stories) => {
+        return {
+          ...stories,
+          [id]: {
+            ...stories[id],
+            score: item.score,
+            title: item.title,
+            time: item.time,
+            url: item.url,
+            author: author,
+            status: "loaded",
+          },
+        };
+      });
+    })();
+  }, []);
   return (
-    <li id={id.toString()} className="card">
+    <li id={id.toString()} className="card" style={{ order: score }}>
       {url && <a href={url} target="_blank"></a>}
       <div className="score">{score}</div>
       <div className="image-container">
