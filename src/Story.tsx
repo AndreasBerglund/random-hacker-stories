@@ -52,7 +52,10 @@ const Story: FunctionComponent<StoryProps> = ({
     })();
   }, []);
   return (
-    <li id={id.toString()} className="card" style={{ order: score }}>
+    <li
+      id={id.toString()}
+      className={`card ${status !== "loaded" ? "loading" : ""}`}
+    >
       {url && <a href={url} target="_blank"></a>}
       <div className="score">{score}</div>
       <div className="image-container">
@@ -62,7 +65,7 @@ const Story: FunctionComponent<StoryProps> = ({
         <h3>{title}</h3>
       </div>
       <div className="author-container">
-        <div className="karma">{convertToK(author.score)}</div>
+        <div className="karma">{convertToK(author.karma)}</div>
         <div className="author">
           <span>
             By <strong>{author.id}</strong>

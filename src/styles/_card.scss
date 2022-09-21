@@ -1,12 +1,4 @@
-@keyframes append-animate {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
+$loading-grey: rgb(200, 200, 200);
 li.card {
   display: flex;
   flex-flow: column nowrap;
@@ -17,6 +9,7 @@ li.card {
   position: relative;
   width: 100%;
   max-width: $card-max-width;
+  min-height: 400px;
 
   @media screen and (max-width: $breakpoint-md) {
     max-width: 100%;
@@ -108,5 +101,35 @@ li.card {
         height: auto;
       }
     }
+  }
+  &.loading {
+    .score,
+    .karma {
+      background-color: $loading-grey;
+      color: $loading-grey;
+      border: none;
+      animation: loading 1.5s alternate infinite;
+    }
+    .title-container h3,
+    .author span {
+      background-color: $loading-grey;
+      color: $loading-grey;
+      border-radius: 4px;
+      display: inline-block;
+      min-width: 60%;
+      animation: loading 1.5s alternate infinite;
+    }
+    .author span:first-child {
+      width: 70%;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.6x;
   }
 }

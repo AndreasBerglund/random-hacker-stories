@@ -12,7 +12,7 @@ export interface IStory {
 
 export interface IAuthor {
   id: number;
-  score: number;
+  karma: number;
 }
 
 export interface IItem {
